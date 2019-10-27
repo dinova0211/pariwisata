@@ -13,11 +13,11 @@ $konek = mysqli_connect("localhost", "root", "", "web_pariwisata");
     if(mysqli_connect_errno()){
    echo "Koneksi Ke Server Gagal";
    }
-// If form submitted, insert values into the database.
+// insert databse.
 if (isset($_REQUEST['username'])){
-        // removes backslashes
+        // menghapus backslashes
  $username = stripslashes($_REQUEST['username']);
-        //escapes special characters in a string
+        //karakter khusus di string
  $username = mysqli_real_escape_string($konek,$username); 
  $password = stripslashes($_REQUEST['password']);
  $password = mysqli_real_escape_string($konek,$password);
@@ -32,14 +32,14 @@ VALUES ('$username', '$password', '$nama', '$contact', '$email')";
         $result = mysqli_query($konek,$query);
         if($result){
             echo "<div class='form'>
-<h3>Berhasil mendaftar.</h3>
-<br/>Click here <a href='login.php'>Login</a></div>";
+        <h3>Berhasil mendaftar.</h3>
+        <br/>Click here <a href='login.php'>Login</a></div>";
         }
     }else{
 ?>
 <div class="form">
-<h1>Registration</h1>
-<form name="registration" action="" method="post">
+<h1>Registrasi</h1>
+<form name="registrasi" action="" method="post">
 <input type="text" name="username" placeholder="Username" required />
 <input type="password" name="password" placeholder="Password" required />
 <input type="text" name="nama" placeholder="Nama" required />

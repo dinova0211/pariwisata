@@ -1,39 +1,34 @@
-<?php
-/*
-Author: Javed Ur Rehman
-Website: http://www.allphptricks.com/
-*/
-?>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<!-- <meta charset="utf-8"> -->
 <title>Login</title>
-<link rel="stylesheet" href="css/style.css" />
+<!-- <link type="text/css" rel="stylesheet" href="css/style.css" /> -->
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <?php
 	/*require('koneksi.php');*/
 	$konek = mysqli_connect("localhost", "root", "", "web_pariwisata");
 	session_start();
-    // If form submitted, insert values into the database.
+    // insert databse.
     if (isset($_POST['username'])){
 		
-		$username = stripslashes($_REQUEST['username']); // removes backslashes
-		$username = mysqli_real_escape_string($konek,$username); //escapes special characters in a string
+		$username = stripslashes($_REQUEST['username']); // menghapus backslashes
+		$username = mysqli_real_escape_string($konek,$username); //karakter khusus di string
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($konek,$password);
 		
-	//Checking is user existing in the database or not
+	//check user di database
         $query = "SELECT * FROM `user` WHERE username='$username' and password='$password'";
 		$result = mysqli_query($konek,$query) or die(mysql_error());
 		$rows = mysqli_num_rows($result);
-        if($rows==1){
+        /*if($rows==1){
 			$_SESSION['username'] = $username;
-			header("Location: index.php"); // Redirect user to index.php
+			header("Location: index.php"); // mendirect user ke index.php
             }else{
 				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-				}
+				}*/
     }else{
 ?>
 <div class="form">
@@ -43,12 +38,10 @@ Website: http://www.allphptricks.com/
 <input type="password" name="password" placeholder="Password" required />
 <input name="submit" type="submit" value="Login" />
 </form>
-<p>Not registered yet? <a href='admin/daftar.php'>Register Here</a></p>
+<p>Belum Punya Akun ? <a href='daftar.php'>Register Here</a></p>
 
 <br /><br />
 </div>
 <?php } ?>
-
-
 </body>
 </html>
