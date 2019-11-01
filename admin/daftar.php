@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Registration</title>
-<link type="text/css" rel="stylesheet"  href="css/style.css">
+<link rel="stylesheet"  href="/pariwisata/css/style.css">
 </head>
 <body>
 <?php
@@ -45,6 +45,8 @@ VALUES ('$username', '$password', '$nama', '$contact', '$email')";
 <input type="text" name="nama" placeholder="Nama" required />
 <input type="text" name="contact" placeholder="Contact" required />
 <input type="email" name="email" placeholder="Email" required />
+<br/>
+<br/>
 <input type="submit" name="submit" value="Daftar" />
 </form>
 </div>

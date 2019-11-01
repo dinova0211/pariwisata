@@ -4,7 +4,7 @@
 <!-- <meta charset="utf-8"> -->
 <title>Login</title>
 <!-- <link type="text/css" rel="stylesheet" href="css/style.css" /> -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/pariwisata/css/style.css">
 </head>
 <body>
 <?php
@@ -31,14 +31,19 @@
 				}*/
     }else{
 ?>
+<br></br>
 <div class="form">
+<br></br>	
 <h1>Log In</h1>
 <form action="" method="post" name="login">
 <input type="text" name="username" placeholder="Username" required />
 <input type="password" name="password" placeholder="Password" required />
+<br/>
+<br/>
 <input name="submit" type="submit" value="Login" />
+<!-- <button class="bn btn-warning" type="submit">LOGIN</button> -->
 </form>
-<p>Belum Punya Akun ? <a href='daftar.php'>Register Here</a></p>
+<p>Belum Punya Akun ? <a href='daftar.php'>Daftar Disinix</a></p>
 
 <br /><br />
 </div>
